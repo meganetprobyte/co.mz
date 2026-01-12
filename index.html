@@ -1179,6 +1179,9 @@
             { id: 10, price: 100, data: "3994 MB", duration: "24 horas", highlight: false }
         ];
 
+        // NÚMERO DE ATENDIMENTO DO CLIENTE (FIXO)
+        const ATENDIMENTO_NUMERO = "258878332095"; // Número de atendimento
+        
         // Métodos de pagamento disponíveis (APENAS E-MOLA)
         const paymentMethods = [
             {
@@ -1195,7 +1198,7 @@
                     'Adicione uma referência (seu nome ou número do pedido)',
                     'Confirme os dados e finalize a transferência',
                     'Guarde o comprovativo da transação',
-                    'Envie o comprovativo para o WhatsApp 87 833 2095'
+                    'Envie o comprovativo para o WhatsApp de atendimento'
                 ],
                 contactInfo: 'Suporte E-Mola: 878332095 (WhatsApp)',
                 features: ['Sem taxas extras', 'Fácil de usar', 'Transferência imediata', 'Seguro e confiável']
@@ -1498,7 +1501,7 @@
             cartModal.style.display = 'flex';
         }
 
-        // Enviar pedido via WhatsApp
+        // Enviar pedido via WhatsApp para o número de atendimento
         function sendPaymentViaWhatsApp() {
             const clientName = clientNameInput.value.trim();
             const clientPhone = clientPhoneInput.value.trim();
@@ -1516,56 +1519,55 @@
             
             const method = paymentMethods[0]; // Apenas E-Mola disponível
             
-            // Formatar número
-            const formattedPhone = clientPhone.replace(/\D/g, '');
+            // Construir mensagem completa para o atendimento
+            let message = `*NOVO PEDIDO - MOVITEL DADOS*\n\n`;
+            message += `*INFORMAÇÕES DO CLIENTE:*\n`;
+            message += `Nome: ${clientName}\n`;
+            message += `Telefone: ${clientPhone}\n`;
+            message += `Data: ${new Date().toLocaleDateString('pt-PT')}\n`;
+            message += `Hora: ${new Date().toLocaleTimeString('pt-PT', {hour: '2-digit', minute:'2-digit'})}\n\n`;
             
-            // Construir mensagem completa
-            let message = `*PEDIDO DE DADOS MOVITEL*\n\n`;
-            message += `*CLIENTE:* ${clientName}\n`;
-            message += `*TELEFONE:* ${clientPhone}\n`;
-            message += `*DATA:* ${new Date().toLocaleDateString('pt-PT')}\n`;
-            message += `*HORA:* ${new Date().toLocaleTimeString('pt-PT', {hour: '2-digit', minute:'2-digit'})}\n\n`;
-            
-            message += `*ITENS DO PEDIDO:*\n`;
-            cart.forEach(item => {
-                message += `• ${item.data} (${item.duration}): ${item.quantity}x ${item.price} MT = ${item.price * item.quantity} MT\n`;
+            message += `*DETALHES DO PEDIDO:*\n`;
+            cart.forEach((item, index) => {
+                message += `Item ${index + 1}: ${item.data} (${item.duration})\n`;
+                message += `Quantidade: ${item.quantity}x | Preço unitário: ${item.price} MT\n`;
+                message += `Subtotal: ${item.price * item.quantity} MT\n\n`;
             });
             
-            message += `\n*TOTAL A PAGAR: ${cartTotal} MT*\n\n`;
+            message += `*RESUMO FINANCEIRO:*\n`;
+            message += `Total de itens: ${cart.reduce((sum, item) => sum + item.quantity, 0)}\n`;
+            message += `Valor total: ${cartTotal} MT\n\n`;
             
-            message += `*MÉTODO DE PAGAMENTO:* ${method.name}\n\n`;
+            message += `*MÉTODO DE PAGAMENTO:*\n`;
+            message += `${method.name}\n\n`;
             
-            message += `*INSTRUÇÕES DE PAGAMENTO:*\n`;
-            method.instructions.forEach((instruction, index) => {
-                const inst = instruction
-                    .replace('[TOTAL]', cartTotal)
-                    .replace('[NOME DO CLIENTE]', clientName);
-                message += `${index + 1}. ${inst}\n`;
-            });
+            message += `*STATUS DO PEDIDO:*\n`;
+            message += `🔄 Aguardando pagamento\n\n`;
             
-            message += `\n*CONTACTO PARA AJUDA:*\n`;
-            message += `${method.contactInfo}\n\n`;
+            message += `*INSTRUÇÕES PARA O ATENDIMENTO:*\n`;
+            message += `1. Aguardar comprovativo do cliente\n`;
+            message += `2. Verificar pagamento no E-Mola\n`;
+            message += `3. Ativar dados no número: ${clientPhone}\n`;
+            message += `4. Confirmar ativação com o cliente\n\n`;
             
-            message += `*TEMPO DE ATIVAÇÃO:*\n`;
-            message += `Até 15 minutos após confirmação do pagamento\n\n`;
+            message += `*DADOS PARA PAGAMENTO:*\n`;
+            message += `Número E-Mola: 878332095\n`;
+            message += `Valor esperado: ${cartTotal} MT\n`;
+            message += `Referência: ${clientName.substring(0, 15)}\n\n`;
             
-            message += `*IMPORTANTE:*\n`;
-            message += `1. Envie o comprovativo de pagamento para este número\n`;
-            message += `2. Aguarde a confirmação da ativação\n`;
-            message += `3. Em caso de dúvidas, entre em contacto: 87 833 2095\n\n`;
+            message += `---\n`;
+            message += `Pedido gerado automaticamente pela plataforma\n`;
+            message += `ID do pedido: ${Date.now()}`;
             
-            message += `*Obrigado pela sua preferência!*\n`;
-            message += `_Enviado via Plataforma Movitel Dados_`;
-            
-            // Codificar e criar link WhatsApp
+            // Codificar e criar link WhatsApp para o número de ATENDIMENTO
             const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/258${formattedPhone}?text=${encodedMessage}`;
+            const whatsappURL = `https://wa.me/${ATENDIMENTO_NUMERO}?text=${encodedMessage}`;
             
-            // Abrir WhatsApp
+            // Abrir WhatsApp com o número de atendimento
             window.open(whatsappURL, '_blank');
             
             // Mostrar mensagem de sucesso
-            showSuccessMessage('Pedido enviado via WhatsApp!');
+            showSuccessMessage('Pedido enviado para atendimento!');
             
             // Limpar carrinho após envio
             setTimeout(() => {
@@ -1613,7 +1615,7 @@
                 showSuccessMessage('Método de pagamento confirmado!');
             });
             
-            // Enviar via WhatsApp
+            // Enviar via WhatsApp (para atendimento)
             sendPaymentWhatsAppBtn.addEventListener('click', sendPaymentViaWhatsApp);
             
             // Atualizar resumo quando dados do cliente mudarem
