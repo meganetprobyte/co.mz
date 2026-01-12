@@ -19,8 +19,6 @@
             --white: #FFFFFF;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
-            --whatsapp-color: #25D366;
-            --whatsapp-dark: #128C7E;
         }
 
         * {
@@ -99,130 +97,6 @@
             justify-content: center;
             font-size: 0.8rem;
             font-weight: 600;
-        }
-
-        /* Botão de Atendimento Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 15px;
-        }
-
-        .whatsapp-button {
-            background-color: var(--whatsapp-color);
-            color: var(--white);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-        }
-
-        .whatsapp-button:hover {
-            background-color: var(--whatsapp-dark);
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-info {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            width: 300px;
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .whatsapp-info.show {
-            display: block;
-        }
-
-        .whatsapp-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-            color: var(--whatsapp-dark);
-        }
-
-        .whatsapp-header i {
-            font-size: 1.5rem;
-        }
-
-        .whatsapp-header h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .whatsapp-number {
-            background-color: var(--light-gray);
-            padding: 12px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .whatsapp-number span {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-        }
-
-        .copy-number {
-            background: none;
-            border: none;
-            color: var(--primary-color);
-            cursor: pointer;
-            padding: 5px;
-            border-radius: 3px;
-            transition: var(--transition);
-        }
-
-        .copy-number:hover {
-            background-color: rgba(255, 107, 0, 0.1);
-        }
-
-        .whatsapp-hours {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--medium-gray);
-        }
-
-        .whatsapp-message {
-            background-color: var(--whatsapp-color);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            padding: 12px 20px;
-            width: 100%;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .whatsapp-message:hover {
-            background-color: var(--whatsapp-dark);
         }
 
         /* Hero Section */
@@ -500,6 +374,7 @@
         .cart-actions {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
         }
 
         .cart-btn {
@@ -514,6 +389,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            min-width: 200px;
         }
 
         .clear-cart {
@@ -527,13 +403,65 @@
         }
 
         .send-whatsapp {
-            background-color: var(--whatsapp-color);
+            background-color: #25D366;
             color: var(--white);
             border: none;
         }
 
         .send-whatsapp:hover {
-            background-color: var(--whatsapp-dark);
+            background-color: #128C7E;
+        }
+
+        .payment-info {
+            background-color: var(--light-gray);
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .payment-info p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .payment-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .payment-methods {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .payment-methods h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .payment-icon {
+            background-color: var(--white);
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .payment-icon i {
+            color: var(--primary-color);
         }
 
         /* Footer */
@@ -565,33 +493,6 @@
             max-width: 600px;
         }
 
-        .support-info {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            width: 100%;
-        }
-
-        .support-info p {
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-
-        .support-link {
-            color: var(--whatsapp-color);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 10px;
-            transition: var(--transition);
-        }
-
-        .support-link:hover {
-            color: var(--whatsapp-dark);
-            text-decoration: underline;
-        }
-
         /* Empty cart message */
         .empty-cart {
             text-align: center;
@@ -621,27 +522,6 @@
             z-index: 3000;
         }
 
-        .copy-success {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 15px 25px;
-            border-radius: 5px;
-            box-shadow: var(--shadow);
-            display: none;
-            align-items: center;
-            gap: 10px;
-            z-index: 3000;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .packages-grid {
@@ -652,17 +532,12 @@
                 flex-direction: column;
             }
             
+            .cart-btn {
+                min-width: 100%;
+            }
+            
             .hero h2 {
                 font-size: 2rem;
-            }
-            
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .whatsapp-info {
-                width: 280px;
             }
         }
 
@@ -679,48 +554,411 @@
                 padding: 20px;
                 width: 95%;
             }
-            
-            .whatsapp-float {
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .whatsapp-info {
-                width: 260px;
-            }
+        }
+
+        /* Simple fade in animation */
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Simple slide up animation */
+        .slide-up {
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Payment Screen (SIMPLIFICADA) */
+        .payment-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--light-gray);
+            z-index: 2001;
+            overflow-y: auto;
+        }
+
+        .payment-screen.active {
+            display: block;
+        }
+
+        .payment-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .payment-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-to-cart {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-to-cart:hover {
+            transform: translateX(-5px);
+        }
+
+        .payment-steps {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--medium-gray);
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .step.active .step-circle {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .step-text {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .step.active .step-text {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .payment-options-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .payment-options-title {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .payment-option-card {
+            background-color: var(--light-gray);
+            border: 2px solid var(--medium-gray);
+            border-radius: 10px;
+            padding: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .payment-option-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-option-card.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(255, 107, 0, 0.05);
+        }
+
+        .payment-option-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border: 2px solid var(--medium-gray);
+        }
+
+        .payment-option-card.selected .payment-option-icon {
+            border-color: var(--primary-color);
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .payment-option-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .payment-option-description {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .payment-option-features {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .payment-option-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .payment-option-features li i {
+            color: #4CAF50;
+        }
+
+        .selected-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .payment-option-card.selected .selected-badge {
+            display: block;
+        }
+
+        .payment-instructions {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .payment-instructions.active {
+            display: block;
+        }
+
+        .instructions-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions-content {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .instructions-steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .instructions-steps li {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+            color: var(--secondary-color);
+        }
+
+        .instructions-steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .payment-contact {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .payment-contact h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .payment-contact p {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .payment-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .payment-btn {
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 200px;
+        }
+
+        .cancel-payment {
+            background-color: var(--light-gray);
+            color: var(--secondary-color);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .cancel-payment:hover {
+            background-color: var(--medium-gray);
+        }
+
+        .confirm-payment {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+        }
+
+        .confirm-payment:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .send-payment {
+            background-color: #25D366;
+            color: var(--white);
+            border: none;
+        }
+
+        .send-payment:hover {
+            background-color: #128C7E;
+        }
+
+        /* Order Summary */
+        .order-summary {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .order-summary h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .order-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .order-detail {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .order-detail label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+
+        .order-detail span {
+            font-weight: 600;
+            color: var(--secondary-color);
         }
     </style>
 </head>
 <body>
-    <!-- Botão de Atendimento Flutuante -->
-    <div class="whatsapp-float">
-        <div class="whatsapp-info" id="whatsappInfo">
-            <div class="whatsapp-header">
-                <i class="fab fa-whatsapp"></i>
-                <h3>Atendimento ao Cliente</h3>
-            </div>
-            <div class="whatsapp-number">
-                <span id="supportNumber">+258878332095</span>
-                <button class="copy-number" id="copyNumberBtn" title="Copiar número">
-                    <i class="fas fa-copy"></i>
-                </button>
-            </div>
-            <div class="whatsapp-hours">
-                <p><i class="far fa-clock"></i> Horário de atendimento:</p>
-                <p>Segunda a Sexta: 8h às 18h</p>
-                <p>Sábado: 9h às 13h</p>
-            </div>
-            <button class="whatsapp-message" id="whatsappSupportBtn">
-                <i class="fab fa-whatsapp"></i> Falar com Atendente
-            </button>
-        </div>
-        <button class="whatsapp-button" id="whatsappToggleBtn">
-            <i class="fab fa-whatsapp"></i>
-        </button>
-    </div>
-
     <!-- Header -->
-    <header>
+    <header class="fade-in">
         <div class="container header-content">
             <div class="logo">
                 <i class="fas fa-wifi"></i>
@@ -734,7 +972,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero fade-in">
         <div class="container">
             <h2>Internet móvel rápida e acessível</h2>
             <p>Compre dados da Movitel com validade de 24 horas e receba diretamente no seu número via WhatsApp</p>
@@ -744,15 +982,15 @@
     <!-- Main Content -->
     <main class="container">
         <!-- Client Information -->
-        <section class="client-info">
+        <section class="client-info slide-up">
             <h3><i class="fas fa-user-circle"></i> Informações do Cliente</h3>
             <div class="form-group">
                 <label for="clientName">Nome do Cliente</label>
                 <input type="text" id="clientName" placeholder="Digite o seu nome completo">
             </div>
             <div class="form-group">
-                <label for="clientPhone">Número de Telefone</label>
-                <input type="tel" id="clientPhone" placeholder="Digite o seu número">
+                <label for="clientPhone">Número do cartão</label>
+                <input type="tel" id="clientPhone" placeholder="Digite o seu número ">
             </div>
         </section>
 
@@ -767,7 +1005,7 @@
 
     <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
+        <div class="cart-content fade-in">
             <div class="cart-header">
                 <h3><i class="fas fa-shopping-cart"></i> Carrinho de Compras</h3>
                 <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
@@ -788,12 +1026,119 @@
                 <span id="cartTotal">0 MT</span>
             </div>
             
+            <div class="payment-info">
+                <p><strong>Método de Pagamento:</strong> E-Mola</p>
+                <p>Pagamento rápido e seguro através da carteira digital E-Mola</p>
+                
+                <div class="payment-methods">
+                    <h4>Método de Pagamento Disponíveis:</h4>
+                    <div class="payment-icons">
+                        <div class="payment-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>E-Mola</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="cart-actions">
                 <button class="cart-btn clear-cart" id="clearCart">
                     <i class="fas fa-trash-alt"></i> Limpar Carrinho
                 </button>
-                <button class="cart-btn send-whatsapp" id="sendWhatsApp">
-                    <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                <button class="cart-btn send-whatsapp" id="proceedToPayment">
+                    <i class="fas fa-credit-card"></i> Ir para Pagamento
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Screen (SIMPLIFICADA) -->
+    <div class="payment-screen" id="paymentScreen">
+        <div class="container">
+            <!-- Payment Header -->
+            <div class="payment-header">
+                <div class="container payment-header-content">
+                    <button class="back-to-cart" id="backToCart">
+                        <i class="fas fa-arrow-left"></i> Voltar ao Carrinho
+                    </button>
+                    <h2>Pagamento</h2>
+                    <div style="width: 100px;"></div> <!-- Spacer para alinhamento -->
+                </div>
+            </div>
+
+            <!-- Payment Steps -->
+            <div class="payment-steps">
+                <div class="step active">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">Escolher Pagamento</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">Confirmar Pedido</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">Finalizar</div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3><i class="fas fa-receipt"></i> Resumo do Pedido</h3>
+                <div class="order-details">
+                    <div class="order-detail">
+                        <label>Cliente</label>
+                        <span id="paymentClientName">-</span>
+                    </div>
+                    <div class="order-detail">
+                        <label>Telefone</label>
+                        <span id="paymentClientPhone">-</span>
+                    </div>
+                    <div class="order-detail">
+                        <label>Total do Pedido</label>
+                        <span id="paymentTotal">0 MT</span>
+                    </div>
+                    <div class="order-detail">
+                        <label>Itens no Carrinho</label>
+                        <span id="paymentItemCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="payment-options-container">
+                <h3 class="payment-options-title"><i class="fas fa-credit-card"></i> Método de Pagamento</h3>
+                <div class="payment-options-grid" id="paymentOptionsGrid">
+                    <!-- Opção de pagamento será inserida via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Payment Instructions (aparece quando método é selecionado) -->
+            <div class="payment-instructions" id="paymentInstructions">
+                <h3 class="instructions-title"><i class="fas fa-info-circle"></i> Instruções de Pagamento</h3>
+                <div class="instructions-content" id="instructionsContent">
+                    <!-- Instruções serão inseridas via JavaScript -->
+                </div>
+                
+                <div class="payment-contact">
+                    <h4>Informações de Contacto</h4>
+                    <p><strong>Para dúvidas ou problemas:</strong></p>
+                    <p>WhatsApp: +258 87 833 2095</p>
+                    <p>Email: suporte@moviteldados.co.mz</p>
+                    <p>Horário: Seg-Sex, 8h-18h</p>
+                </div>
+            </div>
+
+            <!-- Payment Actions -->
+            <div class="payment-actions">
+                <button class="payment-btn cancel-payment" id="cancelPayment">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+                <button class="payment-btn confirm-payment" id="confirmPaymentBtn">
+                    <i class="fas fa-check"></i> Confirmar Método
+                </button>
+                <button class="payment-btn send-payment" id="sendPaymentWhatsApp">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido
                 </button>
             </div>
         </div>
@@ -802,13 +1147,7 @@
     <!-- Success Message -->
     <div class="success-message" id="successMessage">
         <i class="fas fa-check-circle"></i>
-        <span>Pacote adicionado ao carrinho!</span>
-    </div>
-
-    <!-- Copy Success Message -->
-    <div class="copy-success" id="copySuccess">
-        <i class="fas fa-check-circle"></i>
-        <span>Número copiado para área de transferência!</span>
+        <span id="successMessageText">Pacote adicionado ao carrinho!</span>
     </div>
 
     <!-- Footer -->
@@ -820,14 +1159,7 @@
             </div>
             <div class="footer-info">
                 <p>Plataforma de venda de dados da Movitel via WhatsApp. Todos os pacotes têm validade de 24 horas.</p>
-                <div class="support-info">
-                    <p><strong>Precisa de ajuda?</strong></p>
-                    <p>Entre em contato com nosso atendimento:</p>
-                    <a href="#" class="support-link" id="footerSupportBtn">
-                        <i class="fab fa-whatsapp"></i> WhatsApp: +258878332095
-                    </a>
-                </div>
-                <p style="margin-top: 20px;">© 2026 Movitel Dados. Todos os direitos reservados.</p>
+                <p>© 2026 Movitel Dados. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -847,13 +1179,34 @@
             { id: 10, price: 100, data: "3994 MB", duration: "24 horas", highlight: false }
         ];
 
-        // Estado do carrinho
+        // Métodos de pagamento disponíveis (APENAS E-MOLA)
+        const paymentMethods = [
+            {
+                id: 'emola',
+                name: 'E-Mola',
+                icon: 'fa-money-bill-wave',
+                color: '#3498DB',
+                description: 'Carteira digital fácil de usar. Pagamento rápido e seguro.',
+                instructions: [
+                    'Aceda à aplicação E-Mola no seu telemóvel',
+                    'Toque em "Transferir" ou "Enviar Dinheiro"',
+                    'Insira o número: 878332095',
+                    'Digite o valor total: [TOTAL] MT',
+                    'Adicione uma referência (seu nome ou número do pedido)',
+                    'Confirme os dados e finalize a transferência',
+                    'Guarde o comprovativo da transação',
+                    'Envie o comprovativo para o WhatsApp 87 833 2095'
+                ],
+                contactInfo: 'Suporte E-Mola: 878332095 (WhatsApp)',
+                features: ['Sem taxas extras', 'Fácil de usar', 'Transferência imediata', 'Seguro e confiável']
+            }
+        ];
+
+        // Estado da aplicação
         let cart = [];
         let cartTotal = 0;
-
-        // Número de suporte
-        const supportNumber = "+258878332095";
-        const formattedSupportNumber = "+258 878332095";
+        let selectedPaymentMethod = null;
+        let currentStep = 1;
 
         // Elementos do DOM
         const packagesGrid = document.getElementById('packagesGrid');
@@ -866,96 +1219,39 @@
         const cartTotalElement = document.getElementById('cartTotal');
         const cartCount = document.getElementById('cartCount');
         const clearCartBtn = document.getElementById('clearCart');
-        const sendWhatsAppBtn = document.getElementById('sendWhatsApp');
+        const proceedToPaymentBtn = document.getElementById('proceedToPayment');
         const successMessage = document.getElementById('successMessage');
-        const copySuccess = document.getElementById('copySuccess');
+        const successMessageText = document.getElementById('successMessageText');
         const clientNameInput = document.getElementById('clientName');
         const clientPhoneInput = document.getElementById('clientPhone');
         
-        // Elementos do WhatsApp de suporte
-        const whatsappToggleBtn = document.getElementById('whatsappToggleBtn');
-        const whatsappInfo = document.getElementById('whatsappInfo');
-        const copyNumberBtn = document.getElementById('copyNumberBtn');
-        const whatsappSupportBtn = document.getElementById('whatsappSupportBtn');
-        const footerSupportBtn = document.getElementById('footerSupportBtn');
-        const supportNumberElement = document.getElementById('supportNumber');
+        // Elementos da tela de pagamento
+        const paymentScreen = document.getElementById('paymentScreen');
+        const backToCartBtn = document.getElementById('backToCart');
+        const paymentOptionsGrid = document.getElementById('paymentOptionsGrid');
+        const paymentInstructions = document.getElementById('paymentInstructions');
+        const instructionsContent = document.getElementById('instructionsContent');
+        const cancelPaymentBtn = document.getElementById('cancelPayment');
+        const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+        const sendPaymentWhatsAppBtn = document.getElementById('sendPaymentWhatsApp');
+        
+        // Elementos de resumo do pedido
+        const paymentClientName = document.getElementById('paymentClientName');
+        const paymentClientPhone = document.getElementById('paymentClientPhone');
+        const paymentTotal = document.getElementById('paymentTotal');
+        const paymentItemCount = document.getElementById('paymentItemCount');
 
         // Inicializar a plataforma
         function init() {
             renderPackages();
+            renderPaymentOptions();
             updateCartDisplay();
             setupEventListeners();
-            setupSupportFeatures();
-        }
-
-        // Configurar funcionalidades de suporte
-        function setupSupportFeatures() {
-            // Definir número de suporte
-            supportNumberElement.textContent = formattedSupportNumber;
             
-            // Toggle da janela de suporte
-            whatsappToggleBtn.addEventListener('click', function() {
-                whatsappInfo.classList.toggle('show');
-            });
-            
-            // Copiar número de suporte
-            copyNumberBtn.addEventListener('click', function() {
-                copyToClipboard(supportNumber);
-                showCopySuccess();
-            });
-            
-            // Abrir WhatsApp para suporte
-            whatsappSupportBtn.addEventListener('click', function() {
-                openSupportWhatsApp();
-            });
-            
-            // Abrir WhatsApp para suporte do footer
-            footerSupportBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                openSupportWhatsApp();
-            });
-            
-            // Fechar janela de suporte ao clicar fora
-            document.addEventListener('click', function(event) {
-                const isClickInsideWhatsapp = whatsappInfo.contains(event.target) || 
-                                            whatsappToggleBtn.contains(event.target);
-                
-                if (!isClickInsideWhatsapp && whatsappInfo.classList.contains('show')) {
-                    whatsappInfo.classList.remove('show');
-                }
-            });
-        }
-
-        // Copiar para área de transferência
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                console.log('Número copiado: ' + text);
-            }).catch(function(err) {
-                console.error('Erro ao copiar: ', err);
-                // Fallback para método antigo
-                const textArea = document.createElement("textarea");
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand("copy");
-                document.body.removeChild(textArea);
-            });
-        }
-
-        // Mostrar mensagem de cópia bem sucedida
-        function showCopySuccess() {
-            copySuccess.style.display = 'flex';
-            
+            // Selecionar automaticamente o E-Mola (único método disponível)
             setTimeout(() => {
-                copySuccess.style.display = 'none';
-            }, 2000);
-        }
-
-        // Abrir WhatsApp de suporte
-        function openSupportWhatsApp() {
-            const message = encodeURIComponent("Olá! Gostaria de falar com um atendente sobre os pacotes de dados da Movitel.");
-            const whatsappURL = `https://wa.me/${supportNumber}?text=${message}`;
-            window.open(whatsappURL, '_blank');
+                selectEMolaMethod();
+            }, 500);
         }
 
         // Renderizar os pacotes de dados
@@ -964,7 +1260,7 @@
             
             dataPackages.forEach(pkg => {
                 const packageCard = document.createElement('div');
-                packageCard.className = `package-card ${pkg.highlight ? 'highlight' : ''}`;
+                packageCard.className = `package-card ${pkg.highlight ? 'highlight' : ''} slide-up`;
                 
                 packageCard.innerHTML = `
                     ${pkg.highlight ? '<div class="package-badge">Popular</div>' : ''}
@@ -989,6 +1285,41 @@
             });
         }
 
+        // Renderizar opções de pagamento (apenas E-Mola)
+        function renderPaymentOptions() {
+            paymentOptionsGrid.innerHTML = '';
+            
+            paymentMethods.forEach(method => {
+                const paymentOption = document.createElement('div');
+                paymentOption.className = 'payment-option-card';
+                paymentOption.setAttribute('data-method', method.id);
+                
+                paymentOption.innerHTML = `
+                    <div class="payment-option-icon">
+                        <i class="fas ${method.icon}"></i>
+                    </div>
+                    <div class="payment-option-title">${method.name}</div>
+                    <div class="payment-option-description">${method.description}</div>
+                    <ul class="payment-option-features">
+                        ${method.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                    </ul>
+                    <div class="selected-badge">Selecionado</div>
+                `;
+                
+                paymentOptionsGrid.appendChild(paymentOption);
+            });
+        }
+
+        // Selecionar automaticamente o método E-Mola
+        function selectEMolaMethod() {
+            const emolaCard = document.querySelector('.payment-option-card[data-method="emola"]');
+            if (emolaCard) {
+                emolaCard.classList.add('selected');
+                selectedPaymentMethod = 'emola';
+                showPaymentInstructions('emola');
+            }
+        }
+
         // Adicionar pacote ao carrinho
         function addToCart(packageId) {
             const packageToAdd = dataPackages.find(pkg => pkg.id === packageId);
@@ -1009,7 +1340,7 @@
                 }
                 
                 updateCartDisplay();
-                showSuccessMessage();
+                showSuccessMessage('Pacote adicionado ao carrinho!');
             }
         }
 
@@ -1022,6 +1353,7 @@
         // Limpar carrinho
         function clearCart() {
             cart = [];
+            selectedPaymentMethod = null;
             updateCartDisplay();
         }
 
@@ -1037,9 +1369,13 @@
             if (cart.length === 0) {
                 emptyCart.style.display = 'block';
                 cartTotalSection.style.display = 'none';
+                proceedToPaymentBtn.disabled = true;
+                proceedToPaymentBtn.style.opacity = '0.6';
             } else {
                 emptyCart.style.display = 'none';
                 cartTotalSection.style.display = 'flex';
+                proceedToPaymentBtn.disabled = false;
+                proceedToPaymentBtn.style.opacity = '1';
                 
                 cart.forEach(item => {
                     const cartItem = document.createElement('div');
@@ -1076,7 +1412,8 @@
         }
 
         // Mostrar mensagem de sucesso
-        function showSuccessMessage() {
+        function showSuccessMessage(text) {
+            successMessageText.textContent = text;
             successMessage.style.display = 'flex';
             
             setTimeout(() => {
@@ -1084,86 +1421,218 @@
             }, 2000);
         }
 
-        // Enviar pedido via WhatsApp
-        function sendViaWhatsApp() {
+        // Atualizar resumo do pedido na tela de pagamento
+        function updatePaymentSummary() {
             const clientName = clientNameInput.value.trim();
             const clientPhone = clientPhoneInput.value.trim();
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             
-            // Validação básica
-            if (!clientName) {
-                alert('Por favor, insira o nome do cliente.');
-                clientNameInput.focus();
+            paymentClientName.textContent = clientName || 'Não informado';
+            paymentClientPhone.textContent = clientPhone || 'Não informado';
+            paymentTotal.textContent = `${cartTotal} MT`;
+            paymentItemCount.textContent = totalItems;
+        }
+
+        // Mostrar instruções do método de pagamento selecionado
+        function showPaymentInstructions(methodId) {
+            const method = paymentMethods.find(m => m.id === methodId);
+            
+            if (!method) return;
+            
+            // Atualizar instruções com valores reais
+            const instructionsWithValues = method.instructions.map(instruction => {
+                return instruction
+                    .replace('[TOTAL]', cartTotal)
+                    .replace('[NOME DO CLIENTE]', clientNameInput.value.trim() || 'Cliente');
+            });
+            
+            instructionsContent.innerHTML = `
+                <h4>Siga estes passos para pagar com ${method.name}:</h4>
+                <ol class="instructions-steps">
+                    ${instructionsWithValues.map(instruction => `<li>${instruction}</li>`).join('')}
+                </ol>
+                <p><strong>Contacto para ajuda: ${method.contactInfo}</strong></p>
+                <p style="margin-top: 15px; color: var(--primary-color); font-weight: 600;">
+                    <i class="fas fa-clock"></i> Os dados serão ativados em até 15 minutos após confirmação do pagamento.
+                </p>
+                <p style="margin-top: 10px; color: var(--primary-color);">
+                    <i class="fas fa-exclamation-triangle"></i> Não se esqueça de enviar o comprovativo de pagamento!
+                </p>
+            `;
+            
+            paymentInstructions.classList.add('active');
+        }
+
+        // Ir para a tela de pagamento
+        function goToPaymentScreen() {
+            // Verificar se o carrinho tem itens
+            if (cart.length === 0) {
+                showSuccessMessage('Adicione itens ao carrinho primeiro!');
                 return;
             }
             
-            if (!clientPhone) {
-                alert('Por favor, insira o número de telefone do cliente.');
-                clientPhoneInput.focus();
+            // Verificar se os dados do cliente foram preenchidos
+            if (!clientNameInput.value.trim() || !clientPhoneInput.value.trim()) {
+                showSuccessMessage('Preencha os dados do cliente primeiro!');
+                cartModal.style.display = 'none';
+                return;
+            }
+            
+            // Atualizar resumo do pedido
+            updatePaymentSummary();
+            
+            // Selecionar automaticamente o E-Mola
+            selectEMolaMethod();
+            
+            // Fechar modal do carrinho e mostrar tela de pagamento
+            cartModal.style.display = 'none';
+            paymentScreen.classList.add('active');
+            
+            // Rolar para o topo
+            window.scrollTo(0, 0);
+        }
+
+        // Voltar para o carrinho
+        function goBackToCart() {
+            paymentScreen.classList.remove('active');
+            cartModal.style.display = 'flex';
+        }
+
+        // Enviar pedido via WhatsApp
+        function sendPaymentViaWhatsApp() {
+            const clientName = clientNameInput.value.trim();
+            const clientPhone = clientPhoneInput.value.trim();
+            
+            // Validação final
+            if (!clientName || !clientPhone) {
+                showSuccessMessage('Preencha todos os dados do cliente!');
                 return;
             }
             
             if (cart.length === 0) {
-                alert('Por favor, adicione pelo menos um pacote ao carrinho.');
+                showSuccessMessage('O carrinho está vazio!');
                 return;
             }
             
-            // Formatar número (remover espaços e caracteres não numéricos)
+            const method = paymentMethods[0]; // Apenas E-Mola disponível
+            
+            // Formatar número
             const formattedPhone = clientPhone.replace(/\D/g, '');
             
-            // Construir mensagem
-            let message = `*Pedido de Dados Movitel*\n\n`;
-            message += `*Cliente:* ${clientName}\n`;
-            message += `*Telefone:* ${clientPhone}\n\n`;
-            message += `*Itens do Pedido:*\n`;
+            // Construir mensagem completa
+            let message = `*PEDIDO DE DADOS MOVITEL*\n\n`;
+            message += `*CLIENTE:* ${clientName}\n`;
+            message += `*TELEFONE:* ${clientPhone}\n`;
+            message += `*DATA:* ${new Date().toLocaleDateString('pt-PT')}\n`;
+            message += `*HORA:* ${new Date().toLocaleTimeString('pt-PT', {hour: '2-digit', minute:'2-digit'})}\n\n`;
             
+            message += `*ITENS DO PEDIDO:*\n`;
             cart.forEach(item => {
-                message += `- ${item.data}: ${item.quantity}x ${item.price} MT (Total: ${item.price * item.quantity} MT)\n`;
+                message += `• ${item.data} (${item.duration}): ${item.quantity}x ${item.price} MT = ${item.price * item.quantity} MT\n`;
             });
             
-            message += `\n*Total do Pedido:* ${cartTotal} MT\n\n`;
-            message += `*Duração dos dados:* 24 horas\n`;
-            message += `*Enviado via Plataforma Movitel Dados*`;
+            message += `\n*TOTAL A PAGAR: ${cartTotal} MT*\n\n`;
             
-            // Codificar a mensagem para URL
+            message += `*MÉTODO DE PAGAMENTO:* ${method.name}\n\n`;
+            
+            message += `*INSTRUÇÕES DE PAGAMENTO:*\n`;
+            method.instructions.forEach((instruction, index) => {
+                const inst = instruction
+                    .replace('[TOTAL]', cartTotal)
+                    .replace('[NOME DO CLIENTE]', clientName);
+                message += `${index + 1}. ${inst}\n`;
+            });
+            
+            message += `\n*CONTACTO PARA AJUDA:*\n`;
+            message += `${method.contactInfo}\n\n`;
+            
+            message += `*TEMPO DE ATIVAÇÃO:*\n`;
+            message += `Até 15 minutos após confirmação do pagamento\n\n`;
+            
+            message += `*IMPORTANTE:*\n`;
+            message += `1. Envie o comprovativo de pagamento para este número\n`;
+            message += `2. Aguarde a confirmação da ativação\n`;
+            message += `3. Em caso de dúvidas, entre em contacto: 87 833 2095\n\n`;
+            
+            message += `*Obrigado pela sua preferência!*\n`;
+            message += `_Enviado via Plataforma Movitel Dados_`;
+            
+            // Codificar e criar link WhatsApp
             const encodedMessage = encodeURIComponent(message);
-            
-            // Criar link do WhatsApp
             const whatsappURL = `https://wa.me/258${formattedPhone}?text=${encodedMessage}`;
             
-            // Abrir WhatsApp em nova aba
+            // Abrir WhatsApp
             window.open(whatsappURL, '_blank');
+            
+            // Mostrar mensagem de sucesso
+            showSuccessMessage('Pedido enviado via WhatsApp!');
+            
+            // Limpar carrinho após envio
+            setTimeout(() => {
+                clearCart();
+                goBackToCart();
+            }, 1000);
         }
 
         // Configurar event listeners
         function setupEventListeners() {
-            // Abrir/fechar carrinho
+            // Carrinho
             cartIcon.addEventListener('click', () => {
                 cartModal.style.display = 'flex';
-                // Fechar janela de suporte se estiver aberta
-                if (whatsappInfo.classList.contains('show')) {
-                    whatsappInfo.classList.remove('show');
-                }
             });
             
             closeCart.addEventListener('click', () => {
                 cartModal.style.display = 'none';
             });
             
-            // Fechar carrinho ao clicar fora
             cartModal.addEventListener('click', (e) => {
                 if (e.target === cartModal) {
                     cartModal.style.display = 'none';
                 }
             });
             
-            // Limpar carrinho
             clearCartBtn.addEventListener('click', clearCart);
             
+            // Ir para pagamento
+            proceedToPaymentBtn.addEventListener('click', goToPaymentScreen);
+            
+            // Tela de pagamento
+            backToCartBtn.addEventListener('click', goBackToCart);
+            
+            cancelPaymentBtn.addEventListener('click', goBackToCart);
+            
+            // Confirmar método de pagamento (já está pré-selecionado)
+            confirmPaymentBtn.addEventListener('click', () => {
+                // Atualizar passo 2
+                document.querySelectorAll('.step').forEach((step, index) => {
+                    if (index === 1) {
+                        step.classList.add('active');
+                    }
+                });
+                
+                showSuccessMessage('Método de pagamento confirmado!');
+            });
+            
             // Enviar via WhatsApp
-            sendWhatsAppBtn.addEventListener('click', sendViaWhatsApp);
+            sendPaymentWhatsAppBtn.addEventListener('click', sendPaymentViaWhatsApp);
+            
+            // Atualizar resumo quando dados do cliente mudarem
+            clientNameInput.addEventListener('input', updatePaymentSummary);
+            clientPhoneInput.addEventListener('input', updatePaymentSummary);
+            
+            // Selecionar método de pagamento (apenas para clicar, mas já está selecionado)
+            paymentOptionsGrid.addEventListener('click', (e) => {
+                const paymentCard = e.target.closest('.payment-option-card');
+                if (paymentCard) {
+                    // Já está selecionado, apenas confirmar visualmente
+                    paymentCard.classList.add('selected');
+                    selectedPaymentMethod = paymentCard.getAttribute('data-method');
+                    showPaymentInstructions(selectedPaymentMethod);
+                }
+            });
         }
 
-        // Inicializar a plataforma quando o DOM estiver carregado
+        // Inicializar a plataforma
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
